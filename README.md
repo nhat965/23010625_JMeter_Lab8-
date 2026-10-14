@@ -3,7 +3,7 @@
 **Sinh viên:** Trần Văn Nhật · **MSSV:** 23010625  
 **Môn học:** Kiểm thử phần mềm · **Bài thực hành:** Lab 8
 
-> **Trạng thái:** Đã chạy JMeter 5.6.3 trên Windows và ghi nhận **400 samples** qua Aggregate Report (ảnh người thực hiện cung cấp, ngày 14/10/2026). Chưa xác nhận Error % / Throughput do hai cột này nằm ngoài ảnh; ảnh gốc cần tải lên `screenshots/` để hiển thị trong báo cáo.
+> **Trạng thái:** Đã chạy JMeter 5.6.3 trên Windows và ghi nhận **400 samples** qua Aggregate Report (ảnh người thực hiện cung cấp, ngày 14/10/2026). Chưa xác nhận Error % / Throughput do hai cột này nằm ngoài ảnh; ảnh gốc đã được lưu trong `screenshots/` và hiển thị ở mục 7.4.
 
 ## 1. Mục tiêu
 
@@ -160,7 +160,7 @@ Hai ảnh chụp JMeter 5.6.3 thực tế ngày 14/10/2026 đã được đối 
 - **Ảnh 1 – Cấu hình Thread Group:** cây Test Plan được mở rộng, hiển thị HTTP Request Defaults, JSON Header, 4 HTTP Request và Aggregate Report; 10 users, ramp-up 10 giây, 10 loops; xử lý lỗi chọn Start Next Thread Loop.
 - **Ảnh 2 – Aggregate Report:** mỗi API ghi nhận 100 samples, tổng 400 samples; thời gian phản hồi của endpoint mô phỏng chậm khoảng 201 ms trung bình.
 
-**Lưu ý về bằng chứng:** Hai ảnh chụp gốc đã được cung cấp trong cuộc trao đổi, nhưng chưa được upload lên thư mục `screenshots/` của repository. Các đường dẫn bên dưới chỉ hiển thị khi file thật đã được tải lên đúng tên; không sử dụng ảnh dựng thay thế.
+**Lưu ý về bằng chứng:** Hai ảnh chụp gốc đã được lưu trong thư mục `screenshots/` của repository và được hiển thị trực tiếp bên dưới.
 
 **Hình 1 — Thread Group và cây Test Plan**
 
@@ -170,13 +170,13 @@ Hai ảnh chụp JMeter 5.6.3 thực tế ngày 14/10/2026 đã được đối 
 
 ![Aggregate Report](screenshots/02-aggregate-report.png)
 
-Để hoàn thiện báo cáo, cần upload `01-thread-group.png` và `02-aggregate-report.png` vào `screenshots/`. Nên chụp thêm phần bên phải bảng có cột `Error %` và `Throughput`, và xác minh mã HTTP / body response.
+Để hoàn thiện phần đánh giá hiệu năng, nên chụp thêm phần bên phải bảng có cột `Error %` và `Throughput`, đồng thời xác minh mã HTTP / body response.
 
 ## 8. Nhận xét và kết luận
 
 Từ ảnh Aggregate Report, bài kiểm thử đã thực thi đủ **400 samples**; endpoint có độ trễ mô phỏng chậm hơn rõ rệt so với ba endpoint còn lại. Cần chụp thêm **Error %**, **Throughput** và kiểm tra response body để đánh giá đầy đủ độ chính xác và khả năng xử lý tải.
 
-**Kết luận:** Đã xây dựng API mẫu, test plan JMeter và có bằng chứng đo thời gian phản hồi trên máy Windows. Việc đưa ảnh gốc vào repository và xác nhận tỷ lệ lỗi là các bước hoàn thiện còn lại.
+**Kết luận:** Đã xây dựng API mẫu, test plan JMeter và bổ sung ảnh gốc làm bằng chứng đo thời gian phản hồi trên máy Windows. Việc xác nhận tỷ lệ lỗi và throughput là bước hoàn thiện còn lại.
 
 ---
 *Tác giả: Trần Văn Nhật — 23010625 | Lab 8 Apache JMeter*
