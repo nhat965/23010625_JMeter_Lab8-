@@ -153,19 +153,24 @@ Mở `results/html/index.html` để xem biểu đồ và thống kê. Thư mụ
 - Giá trị **Average tổng = 51 ms** bao gồm cả endpoint cố ý trì hoãn, không dùng riêng chỉ số này để đánh giá mọi endpoint.
 - Thời gian đo trong localhost, 10 users và 10 loops là một phép thử học tập, **chưa chứng minh năng lực xử lý tải lớn hoặc hiệu năng production**.
 
-### 7.4. Hình minh họa
+### 7.4. Ảnh minh họa kết quả kiểm thử
 
-Hai ảnh sau là ảnh chụp JMeter thực tế do sinh viên cung cấp. **Cần tải hai file ảnh lên repository với đúng đường dẫn bên dưới** để GitHub hiển thị chúng trong README.
+Hai ảnh chụp JMeter 5.6.3 thực tế ngày 14/10/2026 đã được đối chiếu với bảng số liệu ở mục 7.2:
 
-**Hình 1 — Cấu hình Thread Group và cây Test Plan**
+- **Ảnh 1 – Cấu hình Thread Group:** cây Test Plan được mở rộng, hiển thị HTTP Request Defaults, JSON Header, 4 HTTP Request và Aggregate Report; 10 users, ramp-up 10 giây, 10 loops; xử lý lỗi chọn Start Next Thread Loop.
+- **Ảnh 2 – Aggregate Report:** mỗi API ghi nhận 100 samples, tổng 400 samples; thời gian phản hồi của endpoint mô phỏng chậm khoảng 201 ms trung bình.
 
-![Cấu hình Thread Group JMeter 5.6.3](screenshots/01-thread-group.png)
+**Lưu ý về bằng chứng:** Hai ảnh chụp gốc đã được cung cấp trong cuộc trao đổi, nhưng chưa được upload lên thư mục `screenshots/` của repository. Các đường dẫn bên dưới chỉ hiển thị khi file thật đã được tải lên đúng tên; không sử dụng ảnh dựng thay thế.
 
-**Hình 2 — Aggregate Report với 400 samples và thời gian phản hồi các API**
+**Hình 1 — Thread Group và cây Test Plan**
 
-![Aggregate Report thực nghiệm](screenshots/02-aggregate-report.png)
+![Thread Group và cây Test Plan](screenshots/01-thread-group.png)
 
-**Ảnh cần bổ sung:** chụp thêm màn hình có các cột `Error %`, `Throughput`; nếu được, thêm ảnh `View Results Tree` kiểm tra response code / response body, và ảnh chạy API Python.
+**Hình 2 — Aggregate Report (400 samples)**
+
+![Aggregate Report](screenshots/02-aggregate-report.png)
+
+Để hoàn thiện báo cáo, cần upload `01-thread-group.png` và `02-aggregate-report.png` vào `screenshots/`. Nên chụp thêm phần bên phải bảng có cột `Error %` và `Throughput`, và xác minh mã HTTP / body response.
 
 ## 8. Nhận xét và kết luận
 
